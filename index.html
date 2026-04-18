@@ -5,21 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vol.2 Solutions</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-    body {
-      background: #f5f7fb;
-      color: #0a2540;
-      line-height: 1.6;
-    }
+    body { background: #f5f7fb; color: #0a2540; line-height: 1.6; position: relative; }
 
     header {
-      /*background: #0a2540;*/
       background: transparent;
       color: white;
       padding: 20px 10%;
@@ -28,35 +18,23 @@
       align-items: center;
     }
 
-    header h1 {
-      font-size: 20px;
-      letter-spacing: 1px;
-    }
-
     nav a {
       color: #0A2540;
       margin-left: 20px;
       text-decoration: none;
       font-size: 20px;
+      font-weight: bold;
     }
 
     .hero {
       padding: 100px 10%;
       text-align: center;
-      background: linear-gradient(to right, #0a2540, #123a66);
+      background: linear-gradient(to right, rgba(10,37,64,0.9), rgba(18,58,102,0.9)), url("images/hero-bg.jpg") center/cover;
       color: white;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
+    .hero h2 { font-size: 42px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; }
 
     .buttons button {
       padding: 12px 20px;
@@ -67,27 +45,13 @@
       border-radius: 6px;
     }
 
-    .primary {
-      background: #00b4d8;
-      color: white;
-    }
+    .primary { background: #00b4d8; color: white; }
+    .secondary { background: white; color: #0a2540; }
 
-    .secondary {
-      background: white;
-      color: #0a2540;
-    }
+    .section { padding: 80px 10%; text-align: center; }
+    .section h3 { font-size: 28px; margin-bottom: 40px; }
 
-    .section {
-      padding: 80px 10%;
-      text-align: center;
-    }
-
-    .section h3 {
-      font-size: 28px;
-      margin-bottom: 40px;
-    }
-
-    .services {
+    .services, .process {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -98,17 +62,20 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    .card h4 {
-      margin-bottom: 10px;
+    .card:hover { transform: translateY(-5px); }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
 
-    .process {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+    .card h4 { margin-bottom: 10px; }
 
     footer {
       background: #0a2540;
@@ -117,7 +84,7 @@
       padding: 20px;
       margin-top: 50px;
     }
-    
+
     /* BACKGROUND IMAGE */ 
     body::before {
       content: "";
@@ -130,16 +97,12 @@
       opacity: 0.5;
       z-index: -1;
     }
-
-    body {
-      position: relative;
-    }
-</style>
+  </style>
 </head>
 <body>
 
   <header>
-    <img src="images/Logo_light.png" alt="Vol.2 Solutions Logo" style="height:150px;" />
+    <img src="images/Logo_light.png" alt="Vol.2 Solutions Logo" style="height:120px;" />
     <nav>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
@@ -160,14 +123,17 @@
     <h3>Our Services</h3>
     <div class="services">
       <div class="card">
+        <img src="images/service-website.jpg" alt="Website Development" />
         <h4>Website Development</h4>
         <p>Responsive, modern websites built to convert visitors into customers.</p>
       </div>
       <div class="card">
+        <img src="images/service-webapp.jpg" alt="Web Applications" />
         <h4>Web Applications</h4>
         <p>Custom systems tailored to your business needs and workflows.</p>
       </div>
       <div class="card">
+        <img src="images/service-saas.jpg" alt="SaaS Solutions" />
         <h4>SaaS Solutions</h4>
         <p>Scalable cloud-based software designed for long-term growth.</p>
       </div>
@@ -178,18 +144,22 @@
     <h3>Our Process</h3>
     <div class="process">
       <div class="card">
+        <img src="images/process-discovery.jpg" alt="Discovery" />
         <h4>Discovery</h4>
         <p>Understanding your business goals and requirements.</p>
       </div>
       <div class="card">
+        <img src="images/process-planning.jpg" alt="Planning" />
         <h4>Planning</h4>
         <p>Designing the right solution architecture.</p>
       </div>
       <div class="card">
+        <img src="images/process-development.jpg" alt="Development" />
         <h4>Development</h4>
         <p>Building your solution with precision.</p>
       </div>
       <div class="card">
+        <img src="images/process-testing.jpg" alt="Testing" />
         <h4>Testing & Delivery</h4>
         <p>Ensuring quality before deployment.</p>
       </div>
@@ -198,6 +168,7 @@
 
   <section id="contact" class="section">
     <h3>Let’s Work Together</h3>
+    <img src="images/contact.jpg" alt="Contact" style="width:100%; max-width:500px; border-radius:10px; margin-bottom:20px;" />
     <p>Have a project in mind? Let’s build something impactful.</p>
   </section>
 
