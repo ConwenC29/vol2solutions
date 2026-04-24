@@ -371,7 +371,11 @@ footer {
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="cta-nav">Get a Quote</a>
+    <a href="https://wa.me/27798526921?text=Hi%20Vol.2%20Solutions,%20I%20would%20like%20a%20quote%20for%20a%20website%20project."
+   class="cta-nav"
+   target="_blank">
+   Get Quote
+</a>
   </nav>
 </header>
 
@@ -381,8 +385,10 @@ footer {
     <p>We design high-performance websites and applications that help companies scale, automate, and succeed in a digital-first world.</p>
     
     <div class="hero-buttons">
-      <button class="primary">Get Started</button>
-      <button class="secondary">View Work</button>
+    <button onclick="window.open('https://wa.me/27798526921?text=Hi%20I%20am%20interested%20in%20your%20services','_blank')">
+      Get Started
+    </button>
+    <!--  <button class="secondary">View Work</button> -->
     </div>
   </div>
 </section>
@@ -570,7 +576,10 @@ footer {
     </p>
 
     <div class="cta-buttons">
-      <button class="cta-primary">Request a Quote</button>
+      <button onclick="window.open('https://wa.me/27798526921?text=Hi%20Vol.2%20Solutions,%20I%20would%20like%20a%20quote%20for%20a%20project','_blank')"
+      class="cta-primary">
+        Request a Quote
+      </button>
      <!-- <button class="cta-secondary">View Our Work</button> -->
     </div>
 
@@ -589,11 +598,12 @@ footer {
     <h2>Contact Us</h2>
   </div>
 
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Email">
-    <textarea rows="5" placeholder="Your Message"></textarea>
-    <button class="submit">Send Message</button>
+  <form onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+  
+    <button class="submit" type="submit">Send Message</button>
   </form>
 </section>
 
@@ -602,4 +612,22 @@ footer {
 </footer>
 
 </body>
+
+  <script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let url = "https://wa.me/27821234567?text="
+    + "New%20Website%20Enquiry%0A%0A"
+    + "Name:%20" + encodeURIComponent(name) + "%0A"
+    + "Email:%20" + encodeURIComponent(email) + "%0A"
+    + "Message:%20" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
 </html>
