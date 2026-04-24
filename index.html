@@ -192,16 +192,39 @@ section {
 /* ================= PROJECTS ================= */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
-.project {
-  height: 180px;
+.project-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
-  background: linear-gradient(135deg, #ddd, #bbb);
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  padding: 15px 15px 5px;
+}
+
+.project-card p {
+  padding: 0 15px 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
 /* ================= CTA ================= */
 .cta-section {
   text-align: center;
@@ -439,12 +462,32 @@ footer {
 <section id="projects">
   <div class="section-title">
     <h2>Projects</h2>
+    <p>Sample work showcasing our design and development capabilities</p>
   </div>
 
   <div class="projects">
-    <div class="project"></div>
-    <div class="project"></div>
-    <div class="project"></div>
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <img src="images/project-1.jpg" alt="Project 1">
+      <h3>Business Dashboard UI</h3>
+      <p>Modern analytics dashboard built for performance tracking.</p>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <img src="images/project-2.jpg" alt="Project 2">
+      <h3>E-commerce Platform</h3>
+      <p>Scalable online store with secure checkout system.</p>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <img src="images/project-3.jpg" alt="Project 3">
+      <h3>Booking System App</h3>
+      <p>Automated scheduling platform for service-based businesses.</p>
+    </div>
+
   </div>
 </section>
 
