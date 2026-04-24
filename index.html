@@ -20,22 +20,21 @@
     }
 
     /* ================= NAVBAR ================= */
-    header {
+   header {
       position: relative;
-      background: transparent; /* or transparent if you prefer */
+      background: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
-      /*position: absolute;*/
+      height: 80px;              /* FIXED HEIGHT */
+      padding: 0 60px;           /* removed top/bottom padding */
       width: 100%;
-      top: 0;
-      left: 0;
       z-index: 10;
     }
 
     .logo img {
-      height: 50px;
+      height: 65px;              /* BIGGER LOGO */
+      width: auto;
     }
 
     nav a {
